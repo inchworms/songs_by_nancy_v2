@@ -13,4 +13,3 @@ class Song
 end
 
 DataMapper.finalize
-

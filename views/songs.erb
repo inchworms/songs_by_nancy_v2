@@ -1,10 +1,15 @@
 <p>Here is a list of songs by the great Nancy Sinatra.</p>
-
-<ul>
-  <% @songs.each do |result| %>
-    <li><b><%= result.title %></b></li>
-    <li>Release Date: <%= result.released_on %></li>
-    <li>Length: <%= result.length %></li>
-    <li><a href="/lyrics/<%= result.id %>" title="lyrics">lyrics</a></li><br>
+<a href="/songs/new"> Create a new song</a>
+<br>
+  <%if @songs.any? %>
+    <ul>
+      <% @songs.each do |result| %>
+        <li><b><%= result.title %></b></li>
+        <li>Release Date: <%= result.released_on %></li>
+        <li>Length: <%= result.length %></li>
+        <li><a href="/lyrics/<%= result.id %>" title="lyrics">lyrics</a></li><br>
+      <% end %>
+    </ul>
+  <% else %>
+      <p> No songs have been created yet!
   <% end %>
-</ul>
