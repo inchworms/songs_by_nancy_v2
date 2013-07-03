@@ -1,4 +1,4 @@
 songs_by_nancy_v2
 =================
 
-Sample app showing songs by Nancy Sinatra using dynamic database content.
+Sample app showing songs by Nancy Sinatra using Sinatra and Sequel for dynamic database content.
