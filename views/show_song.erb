@@ -1,6 +1,6 @@
-<h2>Lyrics of "<%= @song.title %>"</h2>
+<h2>Details of "<%= @song.title %>"</h2>
 <p><%= "Release Date:  #{@song.released_on if @song.released_on}, Length: #{@song.length/60} minutes #{@song.length%60} seconds" %></p>
-<p><%= @song.lyrics if @song.lyrics%></p>
+<p>Lyrics: <%= @song.lyrics if @song.lyrics%></p>
 <p><a href="/songs">back to songs index</a></p>
 <p><a href="/songs/<%= @song.id %>/edit">edit this song</a>
 <form action="/songs/<%= @song.id %>" method="POST"> 

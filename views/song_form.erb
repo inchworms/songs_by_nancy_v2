@@ -1,7 +1,7 @@
 <form>
-	Title: <input type="text" name="song[title]" value=<%= @song.title %>><br>
+	Title: <input type="text" name="song[title]" value="<%= @song.title %>"><br>
 	Length(in seconds): <input type="number" name="song[length]" value=<%= @song.length %>><br>
 	Release Date: <input type="date" name="song[released_on]" value=<%= @song.released_on %>><br>
-	Lyrics: <textarea cols=50 rows=20 type="text" name="song[lyrics]" value=<%= @song.lyrics %>></textarea><br>
+	Lyrics: <textarea cols=50 rows=20 type="text" name="song[lyrics]"><%= @song.lyrics %></textarea><br>
 	<input type="submit" value="Save Song">
 </form>

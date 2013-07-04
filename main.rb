@@ -41,6 +41,23 @@ get '/songs/:id' do
   end
 end
 
+get '/songs/:id/edit' do
+  @song = Song.get(params[:id])
+
+  if @song
+    erb :edit_song
+  else
+    status 404
+    erb :not_found
+  end
+end
+
+put '/songs/:id' do
+  song = Song.get(params[:id])
+  song.update(params[:song])
+  redirect to("/songs/#{song.id}")
+end
+
 post '/songs' do
   song = Song.create(params[:song])
   redirect to("/songs/#{song.id}")
