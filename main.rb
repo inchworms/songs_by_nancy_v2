@@ -63,6 +63,12 @@ post '/songs' do
   redirect to("/songs/#{song.id}")
 end
 
+delete '/songs/:id' do
+  Song.get(params[:id]).destroy #motherfucker
+  redirect to("/songs")
+end
+
+
 
 not_found do
   erb :not_found
