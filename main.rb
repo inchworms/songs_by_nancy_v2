@@ -25,15 +25,27 @@ get '/songs' do
   erb :songs
 end
 
-get '/lyrics/:id' do
-  @lyrics = Song.get(params[:id])
+get '/songs/new' do
+  @song = Song.new
+  erb :new
+end
 
-  if @lyrics
-    erb :lyrics
+get '/songs/:id' do
+  @song = Song.get(params[:id])
+
+  if @song
+    erb :show_song
   else
+    status 404
     erb :not_found
   end
 end
+
+post '/songs' do
+  song = Song.create(params[:song])
+  redirect to("/songs/#{song.id}")
+end
+
 
 not_found do
   erb :not_found

@@ -5,10 +5,10 @@
   <%if @songs.any? %>
     <ul>
       <% @songs.each do |result| %>
-        <li><b><%= result.title %></b></li>
-        <li>Release Date: <%= result.released_on %></li>
-        <li>Length: <%= result.length %></li>
-        <li><a href="/lyrics/<%= result.id %>" title="lyrics">lyrics</a></li><br>
+        <li><b><a href="/songs/<%= result.id %>" title="show song"><%= result.title %></a></b></li>
+        <li><%= "Release Date:  #{result.released_on}" %></li>
+        <li><%= "Length: #{result.length/60} minutes #{result.length%60} seconds" %></li>
+        <br>
       <% end %>
     </ul>
   <% else %>
