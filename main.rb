@@ -4,10 +4,6 @@ require 'json'
 require 'rubygems'
 require './song'
 
-before do
-  data = File.read("public/nancy_song_data.json")
-  @result = JSON.parse(data)
-end
 
 get '/' do
   erb :home
@@ -30,22 +26,17 @@ get '/songs' do
 end
 
 get '/lyrics/:id' do
-  @lyric_id = params[:id]
-  @song = @result.detect { |x| x["id"] == @lyric_id.to_i }
-  erb :lyrics
+  @lyrics = Song.get(params[:id])
+
+  if @lyrics
+    erb :lyrics
+  else
+    erb :not_found
+  end
 end
 
 not_found do
-erb :not_found
+  erb :not_found
 end
 
 
-
-get '/name/:x' do
-@name = params[:x]
-erb :show
-end
-
-__END__
-@@show
-<h1>Hello <%= @name %>!</h1>
