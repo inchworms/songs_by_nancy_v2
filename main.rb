@@ -3,7 +3,6 @@ require 'sinatra/reloader' if development?
 require 'json'
 require 'rubygems'
 require './song'
-require 'sinatra/formkeeper'
 
 get '/' do
   erb :home
@@ -60,7 +59,11 @@ end
 
 post '/songs' do
   song = Song.create(params[:song])
-  redirect to("/songs/#{song.id}")
+  if song.save
+    redirect to("/songs/#{song.id}")
+  else
+    flash[:error] = song.errors.full_message
+  end
 end
 
 delete '/songs/:id' do

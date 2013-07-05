@@ -9,7 +9,7 @@
   	<label>Release Date:
       <span class="small">in Format: dd/mm/yyyy</span>
     </label>
-    <input type="date" name="song[released_on]" value=<%= @song.released_on.strftime("%m/%d/%Y") if @song.released_on %> >
+    <input type="text" name="song[released_on]" value=<%= @song.released_on.strftime("%m/%d/%Y") if @song.released_on %> >
   	<label>Lyrics:</label>
     <textarea cols=50 rows=20 type="text" name="song[lyrics]"><%= @song.lyrics %></textarea>
     <br>

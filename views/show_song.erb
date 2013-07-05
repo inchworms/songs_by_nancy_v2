@@ -1,5 +1,5 @@
 <h2>Details of "<%= @song.title %>"</h2>
-<p><%= "Release Date:  #{@song.released_on if @song.released_on}<br>
+<p><%= "Release Date:  #{@song.released_on.strftime(" %e %B %Y") if @song.released_on}<br>
 Length: #{@song.length/60} minutes #{@song.length%60} seconds" %></p>
 <p>Lyrics: <%= @song.lyrics if @song.lyrics%></p>
 <p><a href="/songs">back to songs index</a></p>
