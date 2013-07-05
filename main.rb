@@ -3,7 +3,7 @@ require 'sinatra/reloader' if development?
 require 'json'
 require 'rubygems'
 require './song'
-
+require 'sinatra/formkeeper'
 
 get '/' do
   erb :home
