@@ -62,7 +62,7 @@ post '/songs' do
   if song.save
     redirect to("/songs/#{song.id}")
   else
-    flash[:error] = song.errors.full_message
+    flash[:error] = song.errors.full_messages
   end
 end
 
