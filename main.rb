@@ -63,7 +63,9 @@ post '/songs' do
     redirect to("/songs/#{song.id}")
   else
     # puts "Title: #{song.title} #{song.errors.on(:title)}"
+
     flash[:error] = song.errors.full_messages
+    logger.info song.errors.class
     @song = song
     erb :new
   end
