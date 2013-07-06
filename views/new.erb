@@ -1,4 +1,14 @@
 <h1>Add a New Song</h1>
+
+<% if @song.errors.any? %>
+  <div class="error_messages">
+    Cannot be saved because:<br>
+    <% @song.errors.full_messages.each do |full_message| %>
+      <%= full_message %><br>
+    <% end %>
+  </div>
+<% end %>
+
 <div class="myform">
   <form method="POST" action="/songs">
     <%= erb :song_form %>
