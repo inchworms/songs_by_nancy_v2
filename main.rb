@@ -63,8 +63,12 @@ end
 
 put '/songs/:id' do
   song = Song.get(params[:id])
-  song.update(params[:song])
-  redirect to("/songs/#{song.id}")
+  if song.valid?
+    song.update(params[:song])
+    redirect to("/songs/#{song.id}")
+  else
+    erb :not_found
+  end
 end
 
 post '/songs' do
