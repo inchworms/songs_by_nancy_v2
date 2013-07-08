@@ -4,6 +4,16 @@ require 'json'
 require 'rubygems'
 require './song'
 
+helpers do
+  def format_date(date)
+    if date && date.respond_to?(:strftime)
+      date.strftime("%m/%d/%Y") 
+    else
+      date
+    end
+  end
+end
+
 get '/' do
   erb :home
 end
@@ -71,8 +81,6 @@ delete '/songs/:id' do
   Song.get(params[:id]).destroy #motherfucker
   redirect to("/songs")
 end
-
-
 
 not_found do
   erb :not_found

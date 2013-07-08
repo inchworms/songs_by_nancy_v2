@@ -1,7 +1,6 @@
 require 'dm-core'
 require 'dm-migrations'
 require 'dm-validations'
-
 DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
 
 class Song
@@ -36,3 +35,4 @@ class Song
 end
 
 DataMapper.finalize
+llDataMapper.auto_upgrade!
