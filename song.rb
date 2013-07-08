@@ -11,9 +11,7 @@ class Song
 	property :length, Integer
 	property :released_on, Date
 
-  # def released_on=date
-  #   super Date.strptime(date, '%m/%d/%Y')
-  # end
+
 
   #validation stuff
 
@@ -25,12 +23,13 @@ class Song
       false
     end
   end
+
   
   validates_presence_of :title
-  validates_presence_of :released_on
+  validates_presence_of :released_on, message: "Release Date must not be blank"
   validates_presence_of :lyrics
   validates_presence_of :length
-  validates_format_of   :length, with: greater_than_zero, message: "Length must be greater than zero."
+  validates_format_of   :length, with: greater_than_zero, message: "Length must be greater than zero"
 
 end
 

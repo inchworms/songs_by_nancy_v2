@@ -7,7 +7,7 @@ require './song'
 helpers do
   def format_date(date)
     if date && date.respond_to?(:strftime)
-      date.strftime("%m/%d/%Y") 
+      date.strftime("%d/%m/%Y") 
     else
       date
     end
