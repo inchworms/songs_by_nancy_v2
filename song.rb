@@ -35,4 +35,3 @@ class Song
 end
 
 DataMapper.finalize
-llDataMapper.auto_upgrade!
