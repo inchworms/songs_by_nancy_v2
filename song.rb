@@ -24,9 +24,10 @@ class Song
     end
   end
 
-  
+
   validates_presence_of :title
   validates_presence_of :released_on, message: "Release Date must not be blank"
+  validates_primitive_type_of :released_on, message: "Release Date must be dd/mm/yyyy"
   validates_presence_of :lyrics
   validates_presence_of :length
   validates_format_of   :length, with: greater_than_zero, message: "Length must be greater than zero"
