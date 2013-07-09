@@ -1,4 +1,5 @@
 body {    background: #EDEEE8;
+          font-family: Helvetica, Arial, sans-serif;
 }
 
 #container {
@@ -10,16 +11,15 @@ body {    background: #EDEEE8;
 
 h1 {
           color: #2D2D2D;
-          font: 32px/1 Helvetica, Arial, sans-serif;
+          font-size: : 32px;
           }
 
 h2 {
           color: #2D2D2D;
-          font: 24px/1 Helvetica, Arial, sans-serif;
+          font-size: : 24px;
           }
 p {
           font-size: 18px;
-          /*font: 20px/1.4 Helvetica, Arial, sans-serif;*/
           } 
 
 nav ul {
@@ -95,7 +95,6 @@ textarea{
           border:solid 1px #aacfe4;
           width:200px;
           height:100px;
-          /*just fot testing purpose, so we don't have to scroll all the time for saving*/
           margin:2px 0 20px 10px;
 
 }
@@ -108,6 +107,7 @@ button{
 }
 
 .error_messages {
-          color: red;          
+          color: red;
+          font-size: 12px;          
 }
 
